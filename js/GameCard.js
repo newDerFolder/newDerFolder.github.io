@@ -9,8 +9,10 @@ class GameCard extends HTMLElement {
     render() {
         const title = this.getAttribute('title') || '游戏名称';
         const desc = this.getAttribute('desc') || '游戏简介';
+        // 新增：把 \n 替换成 <br>
+        const descFormatted = desc.replace(/\\n/g, '<br>');
+        
         const emoji = this.getAttribute('emoji') || '🎮';
-        // 新增：读取 image 属性
         const image = this.getAttribute('image') || null; 
         const releaseYear = this.getAttribute('year') || '2024';
         const gameVersion = this.getAttribute('game-version') || '1.0.0';
@@ -34,13 +36,10 @@ class GameCard extends HTMLElement {
             }
         }
 
-        // 生成缩略图内容的逻辑
         let thumbnailContent = '';
         if (image) {
-            // 如果有图片，生成 img 标签
             thumbnailContent = `<img src="${image}" alt="${title} 截图" style="width:100%; height:100%; object-fit:cover;">`;
         } else {
-            // 否则显示 Emoji
             thumbnailContent = emoji;
         }
 
@@ -69,7 +68,6 @@ class GameCard extends HTMLElement {
                     color: #6c757d;
                     overflow: hidden;
                 }
-                /* 新增：让图片在容器里完美显示 */
                 .game-thumbnail img {
                     width: 100%;
                     height: 100%;
@@ -126,7 +124,7 @@ class GameCard extends HTMLElement {
                         <span>📅 ${releaseYear}</span>
                         <span>📌 v${gameVersion}</span>
                     </div>
-                    <p class="game-desc">${desc}</p>
+                    <p class="game-desc">${descFormatted}</p>
                     <div style="margin-top: 8px;">
                         ${downloadsHTML}
                     </div>
