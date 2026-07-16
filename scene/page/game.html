@@ -1,26 +1,26 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>我的游戏作品集</title>
-    <!-- 引用 Pico.css 让页面自动变好看 -->
+    <!-- 引用 Pico.css 做基础样式 -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
-    <!-- 在 game.html 的 <head> 或 <body> 里添加 -->
-<script src="/js/GameCard.js"></script>
-    
+    <!-- 引入游戏卡片组件（样式也在里面） -->
+    <script src="/js/GameCard.js"></script>
 </head>
 <body>
     <main class="container">
-        <!-- 导航栏（返回首页） -->
         <nav>
             <ul>
                 <li><a href="/index.html" role="button" class="outline">🏠 返回首页</a></li>
             </ul>
         </nav>
 
-                <!-- ========== 使用封装好的 game-card 组件 ========== -->
+        <h1>🎮 我的游戏作品</h1>
+        <p>以下是我用 Godot 引擎开发的一些小游戏，点击下载即可体验。</p>
+
+        <!-- 使用封装好的 game-card 组件 -->
         <game-card 
             title="太空冒险" 
             desc="驾驶飞船穿越小行星带，收集能量水晶，躲避陨石撞击。"
@@ -45,8 +45,7 @@
             version="v0.9">
         </game-card>
 
-        <!-- 页脚（可选） -->
-        <footer style="margin-top: 40px; text-align: center; color: var(--muted-color, #6c757d);">
+        <footer style="margin-top: 40px; text-align: center; color: #6c757d;">
             <small>所有游戏均使用 Godot 引擎开发 · 持续更新中</small>
         </footer>
     </main>
