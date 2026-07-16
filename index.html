@@ -5,6 +5,49 @@
     <meta charset="UTF-8">
     <title>我的免费网站(正在施工中...)</title>
     <style>
+        /* ===== 固定导航栏 ===== */
+        /* ===== 固定导航栏 - 居中对齐 ===== */
+nav {
+    position: sticky;
+    top: 0;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    z-index: 999;
+    padding: 10px 0;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+    margin: 0;
+    padding: 0;
+    padding-left: 50px; /* 新增：整体左内边距 50px */
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    color: #1a1a2e !important;
+}
+
+/* 小屏适配 */
+@media (max-width: 600px) {
+    nav ul {
+        gap: 4px 8px;
+    }
+    nav a {
+        font-size: 0.85rem;
+        padding: 4px 10px !important;
+    }
+}
         /* 大卡片横幅样式 */
         .hero-card {
             display: block;
@@ -12,7 +55,7 @@
             margin: 30px 0;
             padding: 200px 40px;
             border-radius: 16px;
-            background-image: url('/image/gamePan.png'); /* ← 替换成你的图片路径 */
+            background-image: url('/image/gamePan.png');
             background-size: cover;
             background-position: center;
             text-decoration: none;
@@ -25,7 +68,6 @@
             transform: translateY(-4px);
             box-shadow: 0 8px 32px rgba(0,0,0,0.25);
         }
-        /* 半透明遮罩，让文字更清晰 */
         .hero-card .overlay {
             position: absolute;
             top: 0;
@@ -66,6 +108,7 @@
         .hero-card .content .btn:hover {
             background: #f0f0f0;
         }
+
         /* 小屏适配 */
         @media (max-width: 600px) {
             .hero-card {
@@ -76,6 +119,9 @@
             }
             .hero-card .content p {
                 font-size: 1rem;
+            }
+            nav {
+                padding: 6px 0;
             }
         }
     </style>
@@ -94,7 +140,7 @@
             </ul>
         </nav>
 
-        <!-- ===== 大卡片横幅（点击跳转到游戏下载页） ===== -->
+        <!-- ===== 大卡片横幅 ===== -->
         <a href="/scene/page/game.html" class="hero-card">
             <div class="overlay"></div>
             <div class="content">
@@ -104,10 +150,15 @@
             </div>
         </a>
 
-        <!-- 页面其他内容（目前保留占位） -->
+        <!-- 页面其他内容 -->
         <h1>🎉 我的第一个 GitHub Pages 网站</h1>
         <p>点击下方下载文件</p>
         <a href="https://github.com/newDerFolder/EasyBag/releases/tag/v0.5">下载测试文件</a>
+        
+        <!-- 加一些占位内容，方便测试滚动效果 -->
+        <div style="height: 800px; opacity: 0.3; display: flex; align-items: center; justify-content: center; border: 1px dashed #ccc; margin-top: 30px;">
+            ⬇️ 滚动试试，导航栏会固定在上面
+        </div>
     </main>
 </body>
 </html>
