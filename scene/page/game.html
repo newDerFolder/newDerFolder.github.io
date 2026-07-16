@@ -17,33 +17,31 @@
             </ul>
         </nav>
 
-        <h1>🎮 我的游戏作品</h1>
-        <p>以下是我用 Godot 引擎开发的一些小游戏，点击下载即可体验。</p>
+            <h1>🎮 我的游戏作品</h1>
+            <p>以下是我用 Godot 引擎开发的一些小游戏，点击下载即可体验。</p>
 
-        <!-- 使用封装好的 game-card 组件 -->
-        <game-card 
-            title="太空冒险" 
-            desc="驾驶飞船穿越小行星带，收集能量水晶，躲避陨石撞击。"
-            link="https://github.com/你的用户名/你的仓库名/releases/tag/v1.0"
-            emoji="🚀"
-            version="v1.2">
-        </game-card>
+     <game-card 
+    title="太空冒险" 
+    year="2025"
+    game-version="2.1.0"
+    desc="驾驶飞船穿越小行星带，收集能量水晶。"
+    emoji="🚀">
 
-        <game-card 
-            title="糖果消除" 
-            desc="经典的消除玩法，搭配甜蜜的视觉风格，适合所有年龄段。"
-            link="https://github.com/你的用户名/你的仓库名/releases/tag/v1.0"
-            emoji="🍬"
-            version="v1.0">
-        </game-card>
+    <download platform="Windows" url="https://github.com/你的用户名/你的仓库名/releases/download/v1.0/SpaceAdventure.exe"></download>
+    <download platform="Android" url="https://github.com/你的用户名/你的仓库名/releases/download/v1.0/SpaceAdventure.apk"></download>
+
+    </game-card>
 
         <game-card 
-            title="跑酷大师" 
-            desc="控制角色在无尽的赛道上奔跑跳跃，挑战你的极限反应。"
-            link="https://github.com/你的用户名/你的仓库名/releases/tag/v1.0"
-            emoji="🏃"
-            version="v0.9">
-        </game-card>
+    title="糖果消除" 
+    year="2024"
+    game-version="1.3.2"
+    desc="经典的消除玩法，搭配甜蜜的视觉风格。"
+    link="https://example.com/play/candy-crush"
+    emoji="🍬"
+    mode="web">   <!-- 加上这一行 -->
+</game-card>
+<!-- 按钮显示：🔗 前往游玩，点击在新窗口打开 -->
 
         <footer style="margin-top: 40px; text-align: center; color: #6c757d;">
             <small>所有游戏均使用 Godot 引擎开发 · 持续更新中</small>
