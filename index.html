@@ -4,6 +4,81 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
     <meta charset="UTF-8">
     <title>我的免费网站(正在施工中...)</title>
+    <style>
+        /* 大卡片横幅样式 */
+        .hero-card {
+            display: block;
+            position: relative;
+            margin: 30px 0;
+            padding: 200px 40px;
+            border-radius: 16px;
+            background-image: url('/image/gamePan.png'); /* ← 替换成你的图片路径 */
+            background-size: cover;
+            background-position: center;
+            text-decoration: none;
+            color: white;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            overflow: hidden;
+        }
+        .hero-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+        }
+        /* 半透明遮罩，让文字更清晰 */
+        .hero-card .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.45);
+            border-radius: 16px;
+            z-index: 1;
+        }
+        .hero-card .content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+        .hero-card .content h2 {
+            font-size: 2.8rem;
+            margin-bottom: 12px;
+            color: white;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+        }
+        .hero-card .content p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: rgba(255,255,255,0.9);
+            text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+        }
+        .hero-card .content .btn {
+            display: inline-block;
+            background: #ffffff;
+            color: #1a1a2e;
+            padding: 12px 36px;
+            border-radius: 30px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background 0.2s ease;
+        }
+        .hero-card .content .btn:hover {
+            background: #f0f0f0;
+        }
+        /* 小屏适配 */
+        @media (max-width: 600px) {
+            .hero-card {
+                padding: 40px 20px;
+            }
+            .hero-card .content h2 {
+                font-size: 2rem;
+            }
+            .hero-card .content p {
+                font-size: 1rem;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -19,7 +94,17 @@
             </ul>
         </nav>
 
-        <!-- 页面主要内容 -->
+        <!-- ===== 大卡片横幅（点击跳转到游戏下载页） ===== -->
+        <a href="/scene/page/game.html" class="hero-card">
+            <div class="overlay"></div>
+            <div class="content">
+                <h2>🎮 我的游戏作品</h2>
+                <p>点击这里浏览游戏作品 · 支持下载试玩</p>
+                <span class="btn">立即探索 →</span>
+            </div>
+        </a>
+
+        <!-- 页面其他内容（目前保留占位） -->
         <h1>🎉 我的第一个 GitHub Pages 网站</h1>
         <p>点击下方下载文件</p>
         <a href="https://github.com/newDerFolder/EasyBag/releases/tag/v0.5">下载测试文件</a>
