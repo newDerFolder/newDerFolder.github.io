@@ -1,67 +1,15 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>我的游戏作品集</title>
     <!-- 引用 Pico.css 让页面自动变好看 -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
-    <style>
-        /* 给游戏卡片增加一点自定义间距和圆角 */
-        .game-card {
-            display: flex;
-            gap: 20px;
-            align-items: flex-start;
-            margin-bottom: 30px;
-            padding: 20px;
-            background: var(--card-background-color, #f8f9fa);
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-        }
-        .game-thumbnail {
-            flex-shrink: 0;
-            width: 160px;
-            height: 120px;
-            background: #e9ecef;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 48px;
-            color: #6c757d;
-            overflow: hidden;
-        }
-        .game-thumbnail img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        .game-info {
-            flex: 1;
-        }
-        .game-title {
-            margin-top: 0;
-            margin-bottom: 8px;
-        }
-        .game-desc {
-            margin-bottom: 12px;
-            color: var(--muted-color, #6c757d);
-        }
-        .download-btn {
-            display: inline-block;
-        }
-        /* 小屏手机适配：让卡片变成上下结构 */
-        @media (max-width: 600px) {
-            .game-card {
-                flex-direction: column;
-                align-items: stretch;
-            }
-            .game-thumbnail {
-                width: 100%;
-                height: 150px;
-            }
-        }
-    </style>
+    <!-- 在 game.html 的 <head> 或 <body> 里添加 -->
+<script src="/js/GameCard.js"></script>
+    
 </head>
 <body>
     <main class="container">
@@ -72,47 +20,30 @@
             </ul>
         </nav>
 
-        <h1>🎮 我的游戏作品</h1>
-        <p>以下是我用 Godot 引擎开发的一些小游戏，点击下载即可体验。</p>
+                <!-- ========== 使用封装好的 game-card 组件 ========== -->
+        <game-card 
+            title="太空冒险" 
+            desc="驾驶飞船穿越小行星带，收集能量水晶，躲避陨石撞击。"
+            link="https://github.com/你的用户名/你的仓库名/releases/tag/v1.0"
+            emoji="🚀"
+            version="v1.2">
+        </game-card>
 
-        <!-- ========== 游戏卡片 1 ========== -->
-        <div class="game-card">
-            <div class="game-thumbnail">
-                <!-- 如果你有截图，把下面的 img 标签取消注释，并把 src 指向你的图片 -->
-                <!-- <img src="/images/game1.jpg" alt="游戏1截图"> -->
-                🕹️
-            </div>
-            <div class="game-info">
-                <h2 class="game-title">游戏名称 1</h2>
-                <p class="game-desc">这是一款关于 XYZ 的休闲小游戏，玩家需要控制角色完成各种挑战。适合所有年龄段玩家。</p>
-                <a href="https://github.com/你的用户名/你的仓库名/releases/tag/v1.0" class="download-btn" role="button">📥 下载游戏 v1.0</a>
-            </div>
-        </div>
+        <game-card 
+            title="糖果消除" 
+            desc="经典的消除玩法，搭配甜蜜的视觉风格，适合所有年龄段。"
+            link="https://github.com/你的用户名/你的仓库名/releases/tag/v1.0"
+            emoji="🍬"
+            version="v1.0">
+        </game-card>
 
-        <!-- ========== 游戏卡片 2 ========== -->
-        <div class="game-card">
-            <div class="game-thumbnail">
-                <!-- <img src="/images/game2.jpg" alt="游戏2截图"> -->
-                🚀
-            </div>
-            <div class="game-info">
-                <h2 class="game-title">游戏名称 2</h2>
-                <p class="game-desc">一款快节奏的动作射击游戏，考验你的反应速度和策略规划。支持键盘和手柄操作。</p>
-                <a href="https://github.com/你的用户名/你的仓库名/releases/tag/v1.0" class="download-btn" role="button">📥 下载游戏 v1.0</a>
-            </div>
-        </div>
-
-        <!-- ========== 游戏卡片 3（复制上面的结构继续添加） ========== -->
-        <!-- 
-        <div class="game-card">
-            <div class="game-thumbnail">🎯</div>
-            <div class="game-info">
-                <h2 class="game-title">游戏名称 3</h2>
-                <p class="game-desc">游戏简介文字。</p>
-                <a href="下载链接" class="download-btn" role="button">📥 下载游戏</a>
-            </div>
-        </div>
-        -->
+        <game-card 
+            title="跑酷大师" 
+            desc="控制角色在无尽的赛道上奔跑跳跃，挑战你的极限反应。"
+            link="https://github.com/你的用户名/你的仓库名/releases/tag/v1.0"
+            emoji="🏃"
+            version="v0.9">
+        </game-card>
 
         <!-- 页脚（可选） -->
         <footer style="margin-top: 40px; text-align: center; color: var(--muted-color, #6c757d);">
