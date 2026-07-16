@@ -1,7 +1,6 @@
 // js/GameCard.js
 class GameCard extends HTMLElement {
     connectedCallback() {
-        // 延迟执行，确保子元素已被解析
         setTimeout(() => {
             this.render();
         }, 0);
@@ -11,18 +10,17 @@ class GameCard extends HTMLElement {
         const title = this.getAttribute('title') || '游戏名称';
         const desc = this.getAttribute('desc') || '游戏简介';
         const emoji = this.getAttribute('emoji') || '🎮';
+        // 新增：读取 image 属性
+        const image = this.getAttribute('image') || null; 
         const releaseYear = this.getAttribute('year') || '2024';
         const gameVersion = this.getAttribute('game-version') || '1.0.0';
         const mode = this.getAttribute('mode') || 'download';
 
         let downloadsHTML = '';
-
-        // 特殊处理：如果是网页模式，只显示“前往游玩”按钮
         if (mode === 'web') {
             const link = this.getAttribute('link') || '#';
             downloadsHTML = `<a href="${link}" target="_blank" class="download-btn" role="button">🔗 前往游玩</a>`;
         } else {
-            // 下载模式：读取所有 <download> 子元素
             const downloadElements = this.querySelectorAll('download');
             if (downloadElements.length > 0) {
                 downloadElements.forEach(el => {
@@ -31,10 +29,19 @@ class GameCard extends HTMLElement {
                     downloadsHTML += `<a href="${url}" class="download-btn" role="button">📥 ${platform}</a> `;
                 });
             } else {
-                // 兼容旧用法：没有子元素时使用 link 属性
                 const fallbackLink = this.getAttribute('link') || '#';
                 downloadsHTML = `<a href="${fallbackLink}" class="download-btn" role="button">📥 下载软件</a>`;
             }
+        }
+
+        // 生成缩略图内容的逻辑
+        let thumbnailContent = '';
+        if (image) {
+            // 如果有图片，生成 img 标签
+            thumbnailContent = `<img src="${image}" alt="${title} 截图" style="width:100%; height:100%; object-fit:cover;">`;
+        } else {
+            // 否则显示 Emoji
+            thumbnailContent = emoji;
         }
 
         this.innerHTML = `
@@ -61,6 +68,12 @@ class GameCard extends HTMLElement {
                     font-size: 48px;
                     color: #6c757d;
                     overflow: hidden;
+                }
+                /* 新增：让图片在容器里完美显示 */
+                .game-thumbnail img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
                 }
                 .game-info {
                     flex: 1;
@@ -104,7 +117,9 @@ class GameCard extends HTMLElement {
                 }
             </style>
             <div class="game-card">
-                <div class="game-thumbnail">${emoji}</div>
+                <div class="game-thumbnail">
+                    ${thumbnailContent}
+                </div>
                 <div class="game-info">
                     <h2 class="game-title">${title}</h2>
                     <div class="game-meta">
