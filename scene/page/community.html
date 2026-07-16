@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>加入交流群 - 我的作品集</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <style>
+        /* ===== 固定导航栏 - 居中对齐 ===== */
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            z-index: 999;
+            padding: 10px 0;
+        }
+        nav ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px 16px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        nav ul li {
+            margin: 0;
+            padding: 0;
+        }
+        nav a {
+            color: #1a1a2e !important;
+        }
+        @media (max-width: 600px) {
+            nav ul {
+                gap: 4px 8px;
+            }
+            nav a {
+                font-size: 0.85rem;
+                padding: 4px 10px !important;
+            }
+        }
+
+        /* 社群卡片样式 */
+        .community-card {
+            background: #f8f9fa;
+            border-radius: 16px;
+            padding: 30px;
+            margin-top: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+        .community-card .icon {
+            font-size: 4rem;
+            margin-bottom: 10px;
+        }
+        .community-card .qrcode-placeholder {
+            display: inline-block;
+            width: 200px;
+            height: 200px;
+            background: #e9ecef;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            color: #6c757d;
+            margin: 10px auto;
+            border: 2px dashed #ccc;
+        }
+        .community-card .qrcode-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 12px;
+        }
+        .community-card .btn-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+            margin-top: 16px;
+        }
+        .community-card .btn-group a {
+            min-width: 140px;
+        }
+        .rule-list {
+            text-align: left;
+            max-width: 500px;
+            margin: 0 auto;
+            padding-left: 20px;
+            color: #6c757d;
+            font-size: 0.95rem;
+        }
+        .rule-list li {
+            margin-bottom: 6px;
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <!-- 导航区域（和首页完全一致） -->
+        <nav>
+            <ul>
+                <li><a href="/index.html" role="button" class="outline">🏠 首页</a></li>
+                <li><a href="/scene/page/game.html" role="button" class="outline">🎮 游戏下载</a></li>
+                <li><a href="/scene/page/software.html" role="button" class="outline">📦 软件下载</a></li>
+                <li><a href="/scene/page/tools.html" role="button" class="outline">🛠️ 开发工具下载</a></li>
+                <li><a href="/scene/page/community.html" role="button" class="outline">💬 加入交流群或社区</a></li>
+            </ul>
+        </nav>
+
+        <!-- 页面主要内容 -->
+        <h1>💬 加入交流群或社区</h1>
+        <p>欢迎加入我们的玩家社群！在这里你可以：</p>
+        <ul>
+            <li>🎮 获取游戏最新版本和更新资讯</li>
+            <li>💡 反馈游戏问题，提出你的建议</li>
+            <li>🤝 与其他玩家交流心得，分享攻略</li>
+            <li>🔧 了解开发进度，参与测试</li>
+        </ul>
+
+        <!-- 社群卡片 -->
+        <div class="community-card">
+            <div class="icon">💬</div>
+            <h2>QQ 交流群</h2>
+            <p>群号：<strong>817406305</strong>（点击下方按钮一键加群）</p>
+            <div class="btn-group">
+                <a href="https://qun.qq.com/universal-share/share?ac=1&authKey=nOPwoWzRI7PC9AqqRymNu%2FJfdwrlYrX0zPkpbPMtacBr%2BvRr3ebLI5fcY6KAPZNa&busi_data=eyJncm91cENvZGUiOiI4MTc0MDYzMDUiLCJ0b2tlbiI6IkRZWXhtL05VbllyN1BDS1ptdnZUekUwTkljcUZGdnJOaEZ5cWtZdnZJVWt1WkM3S3I4NDY0M0wxMnJtQXVDUnciLCJ1aW4iOiIzMjYzNzQ0MjU4In0%3D&data=kOjiAVu4v5HSQmlbKKvPSPs3oWzhPwqPvm5Sql1vcPThMEGc41XEwbakluJBtywH3wCDY13bEqvlW2JK9P3TCA&svctype=4&tempid=h5_group_info" target="_blank" role="button">📱 加入 QQ 群</a>
+            </div>
+        </div>
+
+        <!-- 加入须知 -->
+        <div class="community-card" style="margin-top: 20px; background: #fff3e0;">
+            <div class="icon">📋</div>
+            <h2>📋 群内小提醒</h2>
+            <ol class="rule-list">
+                <li>🤗 无论新手还是老玩家，都欢迎加入，一起交流</li>
+                <li>🚫 请勿发布广告、政治、色情等无关内容</li>
+                <li>🤝 友善交流，尊重他人，禁止人身攻击</li>
+                <li>📢 欢迎反馈游戏 Bug 和建议，帮助游戏变得更好</li>
+                <li>🎮 群内会不定期发布游戏测试版本和福利</li>
+            </ol>
+        </div>
+
+        <!-- 页脚 -->
+        <footer style="margin-top: 40px; text-align: center; color: #6c757d;">
+            <small>vcder交流群 · 期待你的加入 🎮</small>
+        </footer>
+    </main>
+</body>
+</html>
