@@ -1,223 +1,39 @@
-<!DOCTYPE html>
-<html>
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
 <head>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
     <meta charset="UTF-8">
-    <title>我的免费网站(正在施工中...)</title>
+    <meta http-equiv="refresh" content="0; url=scene/page/home.html">
+    <title>跳转中…</title>
     <style>
         body {
             background: #f8f9fb;
             color: #1a1a2e;
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
         }
-        /* ===== 固定导航栏 ===== */
-        /* ===== 固定导航栏 - 居中对齐 ===== */
-nav {
-    position: sticky;
-    top: 0;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(230,230,230,0.9);
-    z-index: 999;
-    padding: 10px 0;
-}
-
-nav ul {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 8px 16px;
-    margin: 0;
-    padding: 0;
-    padding-left: 50px; /* 新增：整体左内边距 50px */
-    list-style: none;
-}
-
-nav ul li {
-    margin: 0;
-    padding: 0;
-}
-
-nav a {
-    color: #1a1a2e !important;
-}
-
-/* 小屏适配 */
-@media (max-width: 600px) {
-    nav ul {
-        gap: 4px 8px;
-    }
-    nav a {
-        font-size: 0.85rem;
-        padding: 4px 10px !important;
-    }
-}
-        /* 大卡片横幅样式 */
-        .hero-card {
-            display: block;
-            position: relative;
-            margin: 30px 0;
-            padding: 120px 40px;
-            border-radius: 20px;
-            background: linear-gradient(135deg, #ffffff 0%, #eef2f6 100%);
-            text-decoration: none;
-            color: #1a1a2e;
-            box-shadow: 0 14px 40px rgba(15, 23, 42, 0.08);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            overflow: hidden;
-            border: 1px solid rgba(206,214,224,0.7);
-        }
-        .hero-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 18px 48px rgba(15, 23, 42, 0.12);
-        }
-        .hero-card .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(255, 255, 255, 0.5);
-            border-radius: 20px;
-            z-index: 1;
-        }
-        .hero-card .content {
-            position: relative;
-            z-index: 2;
+        .redirect {
+            background: #ffffff;
+            border: 1px solid rgba(226,232,240,0.9);
+            border-radius: 18px;
+            padding: 28px;
+            max-width: 420px;
+            box-shadow: 0 16px 35px rgba(15,23,42,0.08);
             text-align: center;
         }
-        .hero-card .content h2 {
-            font-size: 2.8rem;
-            margin-bottom: 12px;
-            color: #1a1a2e;
-        }
-        .hero-card .content p {
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-            color: #4c586a;
-        }
-        .hero-card .content .btn {
-            display: inline-block;
-            background: #1a1a2e;
-            color: #ffffff;
-            padding: 12px 36px;
-            border-radius: 30px;
-            font-weight: 600;
+        a {
+            color: #1d4ed8;
             text-decoration: none;
-            transition: background 0.2s ease;
-        }
-        .hero-card .content .btn:hover {
-            background: #343a46;
-        }
-
-        .jump-panel {
-            display: block;
-            margin: 18px 0 0;
-            padding: 18px 22px;
-            border-radius: 18px;
-            background: #ffffff;
-            border: 1px solid rgba(206,214,224,0.7);
-            box-shadow: 0 12px 24px rgba(15, 23, 42, 0.05);
-            text-decoration: none;
-            color: #1a1a2e;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-        .jump-panel:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 16px 32px rgba(15, 23, 42, 0.08);
-        }
-        .jump-panel .label {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 1rem;
-            margin-bottom: 8px;
-        }
-        .jump-panel .label span {
-            font-size: 1.3rem;
-        }
-        .jump-panel p {
-            margin: 0;
-            color: #4c586a;
-            line-height: 1.6;
-        }
-
-        h1 {
-            color: #111827;
-            font-weight: 700;
-        }
-
-        /* 小屏适配 */
-        @media (max-width: 600px) {
-            .hero-card {
-                padding: 40px 20px;
-            }
-            .hero-card .content h2 {
-                font-size: 2rem;
-            }
-            .hero-card .content p {
-                font-size: 1rem;
-            }
-            nav {
-                padding: 6px 0;
-            }
         }
     </style>
 </head>
-
 <body>
-    <main class="container">
-        <!-- 导航区域 -->
-        <nav>
-            <ul>
-                <!-- <li><a href="/index.html" role="button" class="outline">🏠 首页</a></li> -->
-                <li><a href="/scene/page/game.html" role="button" class="outline">🎮 游戏下载</a></li>
-                <li><a href="/scene/page/software.html" role="button" class="outline">📦 软件下载</a></li>
-                <li><a href="/scene/page/tools.html" role="button" class="outline">🛠️ 开发工具下载</a></li>
-                <li><a href="/scene/page/community.html" role="button" class="outline">💬 加入交流群或社区</a></li>
-                <li><a href="/scene/page/milestone.html" role="button" class="outline">🏆 里程碑</a></li>
-            </ul>
-        </nav>
-
-        <h1>🎉欢迎来到 新建文件夹 的web</h1>
-
-        <a href="/scene/page/milestone.html" class="jump-panel">
-            <div class="label"><span>🏆</span><strong>查看我的个人2026里程碑</strong></div>
-            <p>从积木编程到 Godot 引擎，这里展示我的成长历程与未来目标。</p>
-        </a>
-
-        <!-- ===== 大卡片横幅 ===== -->
-        <a href="/scene/page/game.html" class="hero-card">
-            <div class="overlay"></div>
-            <div class="content">
-                <h2>🎮 我的游戏作品</h2>
-                <p>点击这里浏览游戏作品 · 支持下载试玩</p>
-                <span class="btn">立即探索 →</span>
-            </div>
-        </a>
-
-
-        <!-- 建站纪念 -->
-<div style="margin: 40px 0; padding: 30px 20px; background: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%); border-radius: 16px; text-align: center; border-left: 6px solid #e67e22;">
-    <div style="font-size: 3rem; margin-bottom: 8px;">🎉</div>
-    <h2 style="margin: 0 0 8px 0; color: #1a1a2e;">🎊 建站纪念 · 2026年7月16日</h2>
-    <p style="margin: 0; color: #5a4a3a; font-size: 1.1rem;">
-        今天，<strong>新建文件夹</strong> 的个人网站正式诞生啦！<br>
-        这里会陆续收录我开发的游戏、软件和各种小工具。<br>
-        <span style="display: inline-block; margin-top: 8px; background: #e67e22; color: #fff; padding: 4px 16px; border-radius: 20px; font-size: 0.9rem;">
-            🚀 持续更新中，欢迎常来看看
-        </span>
-    </p>
-</div>
-
-
-        <p>点击下方下载文件</p>
-        <a href="https://github.com/newDerFolder/EasyBag/releases/tag/v0.5">下载测试文件</a>
-        
-        <!-- 加一些占位内容，方便测试滚动效果 -->
-        <div style="height: 800px; opacity: 0.3; display: flex; align-items: center; justify-content: center; border: 1px dashed #ccc; margin-top: 30px;">
-            ⬇️ 占位
-        </div>
-    </main>
+    <div class="redirect">
+        <p>页面正在跳转到首页，请稍候...</p>
+        <p>如果没有自动跳转，请点击 <a href="scene/page/home.html">前往首页</a>。</p>
+    </div>
 </body>
 </html>
