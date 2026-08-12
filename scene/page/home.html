@@ -126,6 +126,57 @@ nav a {
             transform: translateY(-2px);
             box-shadow: 0 16px 32px rgba(15, 23, 42, 0.08);
         }
+        .promo-card {
+            display: grid;
+            grid-template-columns: minmax(180px, 260px) 1fr;
+            gap: 18px;
+            margin: 24px 0 0;
+            padding: 20px;
+            border-radius: 22px;
+            background: linear-gradient(180deg, #ffffff 0%, #f6f9ff 100%);
+            border: 1px solid rgba(100,116,139,0.16);
+            box-shadow: 0 16px 36px rgba(15, 23, 42, 0.08);
+            text-decoration: none;
+            color: #0f172a;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+            align-items: center;
+        }
+        .promo-card:hover {
+            transform: translateY(-3px);
+            background: linear-gradient(180deg, #ffffff 0%, #e8f0ff 100%);
+            box-shadow: 0 20px 40px rgba(15, 23, 42, 0.12);
+        }
+        .promo-card img {
+            width: 100%;
+            aspect-ratio: 3 / 2;
+            object-fit: cover;
+            border-radius: 16px;
+            background: #f0f4ff;
+        }
+        .promo-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 10px;
+        }
+        .promo-title {
+            margin: 0;
+            font-size: 1.25rem;
+            line-height: 1.2;
+            font-weight: 700;
+        }
+        .promo-subtitle {
+            margin: 0;
+            color: #475569;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        .promo-desc {
+            margin: 0;
+            color: #334155;
+            font-size: 0.98rem;
+            line-height: 1.6;
+        }
         .jump-panel .label {
             display: inline-flex;
             align-items: center;
@@ -180,6 +231,18 @@ nav a {
         </nav>
 
         <h1>🎉欢迎来到 新建文件夹 的web主页</h1>
+
+        <a href="#" class="promo-card">
+            <img src="/image/亚文化革命.png" alt="Subcultural Revolution 游戏预告图">
+            <div class="promo-info">
+                <div class="promo-title">Subcultural Revolution · 亚文化革命</div>
+                <div class="promo-subtitle">游戏开发中 · 点击直达 B 站第一开发视频</div>
+                <p class="promo-desc">正在开发中的独特题材现代大战略游戏，
+                    成为万千亚文化群体中的一员，应对风云变幻的争议与风波,生存并发展势力,
+                    带领您的文化席卷全球。</p>
+                <small>该推广发布于2026.8.12</small>
+            </div>
+        </a>
 
         <a href="/scene/page/about.html" class="jump-panel">
             <div class="label"><span>👤</span><strong>个人简介 · 关于我</strong></div>
