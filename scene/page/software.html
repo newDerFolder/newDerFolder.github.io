@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>软件下载 - 我的作品集</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <style>
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0,0,0,0.08);
+            padding: 10px 0;
+            z-index: 999;
+        }
+        nav ul {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px 16px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        nav a {
+            color: #1a1a2e !important;
+        }
+        .software-card {
+            background: #f8f9fa;
+            border-radius: 14px;
+            padding: 24px;
+            margin-top: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+        }
+        .software-card h2 {
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <nav>
+            <ul>
+                <li><a href="/index.html" role="button" class="outline">🏠 首页</a></li>
+                <li><a href="/scene/page/game.html" role="button" class="outline">🎮 游戏下载</a></li>
+                <li><a href="/scene/page/software.html" role="button" class="outline">📦 软件下载</a></li>
+                <li><a href="/scene/page/tools.html" role="button" class="outline">🛠️ 开发工具下载</a></li>
+                <li><a href="/scene/page/community.html" role="button" class="outline">💬 社区</a></li>
+            </ul>
+        </nav>
+
+        <h1>📦 软件下载</h1>
+        <p>这里列出你可能会用到的安装包、编辑器和辅助软件，方便快速下载与参考。</p>
+
+        <div class="software-card">
+            <h2>推荐软件</h2>
+            <ul>
+                <li>🎮 Godot Engine - 核心游戏引擎</li>
+                <li>🖌 Aseprite / Krita - 美术素材制作</li>
+                <li>📦 Blender - 3D 建模与动画</li>
+                <li>🧪 Visual Studio Code - 编辑器与调试</li>
+            </ul>
+        </div>
+
+        <div class="software-card">
+            <h2>实用工具</h2>
+            <ul>
+                <li>🌐 Git - 版本控制</li>
+                <li>☁️ GitHub / Gitee - 项目托管</li>
+                <li>📱 Android SDK / JDK - Android 导出支持</li>
+                <li>☁️ Quark / OneDrive / Google Drive - 发布与分享资源</li>
+            </ul>
+        </div>
+
+        <footer style="margin-top: 40px; text-align: center; color: #6c757d;">
+            <small>如果你有更具体的工具清单，我可以继续帮你补全成更专业的下载页面。</small>
+        </footer>
+    </main>
+</body>
+</html>
