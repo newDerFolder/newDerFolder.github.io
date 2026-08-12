@@ -18,56 +18,91 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
-            justify-content: center;
-            padding: 30px 20px;
+            justify-content: flex-end;
+            padding: 30px 100px 30px 20px;
             overflow: hidden;
         }
         .background-panel {
             position: absolute;
-            left: 0;
-            right: 0;
-            top: 12vh;
-            height: 58vh;
-            background-image: url('/image/gamePan.png');
+            inset: 0;
+            background-image: url('/image/ts背景图.png');
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center center;
-            opacity: 0.28;
-            filter: saturate(0.95) brightness(0.92);
+            opacity: 1;
+            filter: saturate(1.08) brightness(1);
             pointer-events: none;
-            transform: translateY(8%);
+            transform: none;
         }
         .background-overlay {
             position: absolute;
             inset: 0;
-            background: linear-gradient(180deg, rgba(239,242,246,0.96) 0%, rgba(239,242,246,0.70) 45%, rgba(239,242,246,0.82) 100%);
+            background: rgba(255,255,255,0.02);
             pointer-events: none;
         }
         .about-card {
             position: relative;
-            width: 100%;
-            max-width: 900px;
-            background: rgba(255,255,255,0.72);
-            border-radius: 32px;
-            padding: 42px;
-            box-shadow: 0 26px 70px rgba(15, 23, 42, 0.14);
-            border: 1px solid rgba(255,255,255,0.70);
-            backdrop-filter: blur(18px);
+            width: min(84%, 740px);
+            max-width: 740px;
+            background: rgba(255,255,255,0.005);
+            border-radius: 28px;
+            padding: 34px;
+            box-shadow: 0 20px 48px rgba(15, 23, 42, 0.05), inset 0 0 0 1px rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.08);
+            backdrop-filter: blur(48px);
             z-index: 1;
+            overflow: hidden;
+        }
+        .about-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            border-radius: 28px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.22), rgba(255,255,255,0));
+            mix-blend-mode: screen;
         }
         .profile-top {
             display: grid;
-            grid-template-columns: 180px 1fr;
-            gap: 32px;
+            grid-template-columns: 160px 1fr;
+            gap: 28px;
             align-items: center;
+            background: rgba(255, 255, 255, 0.002);
+            padding: 26px;
+            border-radius: 24px;
+            border: 1px solid rgba(255,255,255,0.08);
+            box-shadow: inset 0 0 0 1px rgba(255,255,255,0.02), 0 0 0 1px rgba(255,255,255,0.05);
+            backdrop-filter: blur(36px);
         }
         .avatar {
-            width: 180px;
-            height: 180px;
+            width: 160px;
+            height: 160px;
             border-radius: 28px;
             overflow: hidden;
-            background: linear-gradient(135deg, #7c3aed 0%, #38bdf8 100%);
-            box-shadow: 0 22px 40px rgba(15, 23, 42, 0.18);
+            background: rgba(255,255,255,0.005);
+            box-shadow: 0 24px 40px rgba(15, 23, 42, 0.06);
+            border: 1px solid rgba(255,255,255,0.92);
+        }
+        .home-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 28px;
+            width: 100%;
+            max-width: 320px;
+            padding: 14px 24px;
+            border-radius: 999px;
+            background: rgba(255,255,255,0.18);
+            color: #0f172a;
+            border: 1px solid rgba(255,255,255,0.3);
+            text-decoration: none;
+            box-shadow: 0 12px 24px rgba(15, 23, 42, 0.08);
+            backdrop-filter: blur(22px);
+            transition: transform 0.2s ease, background 0.2s ease;
+        }
+        .home-link:hover {
+            transform: translateY(-2px);
+            background: rgba(255,255,255,0.26);
         }
         .avatar img {
             width: 100%;
@@ -90,16 +125,17 @@
             font-size: 0.95rem;
             letter-spacing: 0.2em;
             text-transform: uppercase;
-            color: #475569;
+            color: #334155;
         }
         .profile-meta h1 {
             margin: 0;
             font-size: clamp(2.6rem, 4vw, 3.4rem);
             line-height: 1;
+            color: #0f172a;
         }
         .profile-meta p.intro {
             margin: 0;
-            color: #334155;
+            color: #1f2937;
             font-size: 1rem;
             line-height: 1.8;
             max-width: 680px;
@@ -184,11 +220,10 @@
         <section class="about-card">
             <div class="profile-top">
                 <div class="avatar">
-                    <img src="/image/自由生存者emoji2.png" alt="头像">
+                    <img src="/image/ts头像.jpg" alt="头像">
                 </div>
                 <div class="profile-meta">
                     <div class="name-title">
-                        <p class="eyebrow">个人介绍</p>
                         <h1>我是 新建文件夹</h1>
                     </div>
                     <p class="intro">热爱游戏与工具制作，追求简洁又大气的视觉表达。这个页面通过透明浮层与底部大图，营造现代、好看的个人主页风格。</p>
@@ -197,16 +232,7 @@
                         <span class="tag">界面设计</span>
                         <span class="tag">轻量视觉</span>
                     </div>
-                </div>
-            </div>
-            <div class="summary-card">
-                <div class="summary-item">
-                    <strong>我的定位</strong>
-                    <span>将创意与可玩性结合，打造既有态度又易上手的游戏与工具。</span>
-                </div>
-                <div class="summary-item">
-                    <strong>现在在做</strong>
-                    <span>完善个人网站内容，展示作品、开发历程以及社区互动入口。</span>
+                    <a href="/scene/page/home.html" class="home-link">去首页看看</a>
                 </div>
             </div>
         </section>
