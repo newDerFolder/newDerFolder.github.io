@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人里程碑 - 我的作品集</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <style>
+        body {
+            background: linear-gradient(180deg, #f4f7fb 0%, #ffffff 100%);
+            color: #222;
+        }
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.94);
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid rgba(0,0,0,0.08);
+            padding: 12px 0;
+            z-index: 999;
+        }
+        nav ul {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px 16px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        nav a {
+            color: #1a1a2e !important;
+        }
+        .hero {
+            padding: 26px;
+            margin: 24px 0 18px;
+            border-radius: 22px;
+            background: linear-gradient(135deg, #1f3d70 0%, #2e5f9d 100%);
+            color: #f8fbff;
+            box-shadow: 0 18px 40px rgba(24, 39, 70, 0.13);
+        }
+        .hero h1 {
+            margin-top: 0;
+            font-size: 2.4rem;
+        }
+        .hero p {
+            margin: 14px 0 0;
+            color: #d7e6ff;
+            line-height: 1.7;
+        }
+        .timeline {
+            display: grid;
+            gap: 18px;
+            margin-top: 20px;
+        }
+        .milestone {
+            background: #ffffff;
+            border-radius: 18px;
+            padding: 24px;
+            border: 1px solid rgba(34, 51, 82, 0.08);
+            box-shadow: 0 10px 30px rgba(20, 38, 72, 0.05);
+        }
+        .milestone h2 {
+            margin: 0 0 10px;
+            font-size: 1.2rem;
+        }
+        .milestone .tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95rem;
+            color: #3b5c96;
+            margin-bottom: 10px;
+        }
+        .milestone p {
+            margin: 0 0 12px;
+            color: #4c5b6d;
+            line-height: 1.7;
+        }
+        .milestone ul {
+            margin: 0;
+            padding-left: 1.2rem;
+            color: #4c5b6d;
+        }
+        .milestone ul li {
+            margin-bottom: 10px;
+        }
+        .goals {
+            display: grid;
+            gap: 16px;
+            margin-top: 28px;
+        }
+        .goal-card {
+            background: #eef4ff;
+            border-radius: 18px;
+            padding: 20px;
+            border: 1px solid rgba(61, 111, 190, 0.15);
+        }
+        footer {
+            margin-top: 36px;
+            text-align: center;
+            color: #6c757d;
+        }
+        @media (max-width: 680px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <nav>
+            <ul>
+                <li><a href="/index.html" role="button" class="outline">🏠 首页</a></li>
+                <li><a href="/scene/page/game.html" role="button" class="outline">🎮 游戏下载</a></li>
+                <li><a href="/scene/page/software.html" role="button" class="outline">📦 软件下载</a></li>
+                <li><a href="/scene/page/tools.html" role="button" class="outline">🛠️ 开发工具下载</a></li>
+                <li><a href="/scene/page/community.html" role="button" class="outline">💬 社区</a></li>
+            </ul>
+        </nav>
+
+        <section class="hero">
+            <h1>🏁 我的个人里程碑</h1>
+            <p>这里展示我的开发历程、主要作品和当前阶段，既是个人简介页，又是我的成长路线图。</p>
+        </section>
+
+        <section class="timeline">
+            <article class="milestone">
+                <div class="tag">2020 · 起点</div>
+                <h2>从积木开始的游戏开发之路</h2>
+                <p>刚开始我连电脑都没有，只能在手机上使用编程猫这样的积木编程软件进行创作，当时我技术不佳，但我对游戏开发充满了热情。
+                    这是我第一次接触游戏开发的起点，也是我个人里程碑的开端。
+                     
+                </p>
+
+                </p>
+                <ul>
+                    <li>✅ 自由生存者系列初代诞生</li>
+                    <li>✅ 初认编程基础</li>
+                </ul>
+            </article>
+
+            <article class="milestone">
+                <div class="tag">2020~2023 · Nemo</div>
+                <h2>积木创造不可能</h2>
+                <p>这段日子期间，我的scratch水平不断提升，
+                    同时，游戏设计的理念也逐渐形成，我也在社区里认识了许多小伙伴，
+                    玩个der工作室也在此期间成立</p>
+                <ul>
+                    <li>🎮 《自由生存者emoji2》发布，这是在编程猫平台开始迈向成熟的一作</li>
+                    <li>🧱 《弹幕冲击》系列诞生，拓展ARPG的细分领域</li>
+                    <li>🧱  玩个der工作室成立</li>
+                </ul>
+            </article>
+
+            <article class="milestone">
+                <div class="tag">2023~2024 · 咖啡与小甜饼</div>
+                <h2>学习Java与JS</h2>
+                <p>当时随着作品规模的提升，我逐渐意识到scratch类平台的局限性，为了突破这些限制，
+                    我开始学习Java和JavaScript，为后续的开发打下基础。
+                    “零基础，学IT，月薪过万，就来黑马程序员！”这句话绝对是网络教程中让人印象深刻的名人名言，
+                    ，我还清楚的记得当年pink老师讲js时那个幽默有趣的风格。
+                    值得一提的是当时我还是没有电脑，因此使用的是AIDE编辑器，
+                    不知道大家有没有用过呢。</p>
+                <ul>
+                    <li>🛠️ 学习了Java</li>
+                    <li>📈 学习了JavaScript</li>
+                </ul>
+            </article>
+
+            <article class="milestone">
+                <div class="tag">2025 · 实战与发布</div>
+                <h2>持续实战与社区反馈</h2>
+                <p>通过发布测试版和收集用户反馈，我把许多功能打磨得更稳定，同时构建了更明确的产品方向。</p>
+                <ul>
+                    <li>📌 参与社区测试，收集BUG与建议</li>
+                    <li>🔧 优化工具稳定性和适配性</li>
+                </ul>
+            </article>
+
+            <article class="milestone">
+                <div class="tag">2026 · 现在</div>
+                <h2>当前阶段：大项目与插件合流</h2>
+                <p>现在我正在推进更大的游戏作品，同时把自己的开发插件打造成稳定可复用的系统。</p>
+                <ul>
+                    <li>🚀 开发《对决之塔7》</li>
+                    <li>🧩 打磨 ForMap、ActTea、EasyBag、GalTalk 等核心模块</li>
+                </ul>
+            </article>
+        </section>
+
+        <section class="goals">
+            <article class="goal-card">
+                <h2>下一步目标</h2>
+                <ul>
+                    <li>🔭 将个人插件系统整理为更易复用的工具包</li>
+                    <li>🌐 通过社区与交流群，获取更多用户反馈</li>
+                    <li>🎮 推出更完整的游戏作品与测试版</li>
+                </ul>
+            </article>
+
+            <article class="goal-card">
+                <h2>你可以看到的内容</h2>
+                <ul>
+                    <li>📂 我的游戏展示页与下载入口</li>
+                    <li>🛠 我的开发工具与插件介绍</li>
+                    <li>💬 社区交流群与最新进度</li>
+                </ul>
+            </article>
+        </section>
+
+        <footer>
+            <small>这个页面展示你个人从游戏开发到引擎工具的成长历程，后续可以继续补充更具体的项目节点。</small>
