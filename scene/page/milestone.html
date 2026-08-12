@@ -49,16 +49,51 @@
             line-height: 1.7;
         }
         .timeline {
+            position: relative;
             display: grid;
             gap: 18px;
             margin-top: 20px;
+            padding-left: 40px;
+        }
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 20px;
+            top: 26px;
+            bottom: 0;
+            width: 3px;
+            background: rgba(46, 95, 157, 0.25);
+            border-radius: 2px;
         }
         .milestone {
+            position: relative;
             background: #ffffff;
             border-radius: 18px;
-            padding: 24px;
+            padding: 24px 24px 24px 44px;
             border: 1px solid rgba(34, 51, 82, 0.08);
             box-shadow: 0 10px 30px rgba(20, 38, 72, 0.05);
+        }
+        .milestone::before {
+            content: "";
+            position: absolute;
+            left: -24px;
+            top: 32px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #2e5f9d;
+            box-shadow: 0 0 0 6px rgba(46, 95, 157, 0.16);
+        }
+        .milestone .tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95rem;
+            color: #3b5c96;
+            margin-bottom: 10px;
+            padding: 4px 10px;
+            background: rgba(46, 95, 157, 0.06);
+            border-radius: 999px;
         }
         .milestone h2 {
             margin: 0 0 10px;
@@ -133,8 +168,6 @@
                     这是我第一次接触游戏开发的起点，也是我个人里程碑的开端。
                      
                 </p>
-
-                </p>
                 <ul>
                     <li>✅ 自由生存者系列初代诞生</li>
                     <li>✅ 初认编程基础</li>
@@ -170,12 +203,12 @@
             </article>
 
             <article class="milestone">
-                <div class="tag">2025 · 实战与发布</div>
-                <h2>持续实战与社区反馈</h2>
-                <p>通过发布测试版和收集用户反馈，我把许多功能打磨得更稳定，同时构建了更明确的产品方向。</p>
+                <div class="tag">2024~2025 · 初入游戏引擎</div>
+                <h2>初入Godot游戏引擎</h2>
+                <p>这段期间，我真正开始学习和使用Godot游戏引擎，探索更强大的游戏开发能力。</p>
                 <ul>
-                    <li>📌 参与社区测试，收集BUG与建议</li>
-                    <li>🔧 优化工具稳定性和适配性</li>
+                    <li>📌 制作一些练手小游戏</li>
+                    <li>🔧 精进引擎框架与技巧</li>
                 </ul>
             </article>
 
@@ -192,23 +225,21 @@
 
         <section class="goals">
             <article class="goal-card">
-                <h2>下一步目标</h2>
+                <h2>未来的故事</h2>
                 <ul>
                     <li>🔭 将个人插件系统整理为更易复用的工具包</li>
                     <li>🌐 通过社区与交流群，获取更多用户反馈</li>
                     <li>🎮 推出更完整的游戏作品与测试版</li>
+
+
                 </ul>
             </article>
 
-            <article class="goal-card">
-                <h2>你可以看到的内容</h2>
-                <ul>
-                    <li>📂 我的游戏展示页与下载入口</li>
-                    <li>🛠 我的开发工具与插件介绍</li>
-                    <li>💬 社区交流群与最新进度</li>
-                </ul>
-            </article>
         </section>
 
         <footer>
             <small>这个页面展示你个人从游戏开发到引擎工具的成长历程，后续可以继续补充更具体的项目节点。</small>
+        </footer>
+    </main>
+</body>
+</html>
