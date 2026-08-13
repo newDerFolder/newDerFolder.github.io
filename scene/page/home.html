@@ -26,10 +26,10 @@ nav ul {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: 8px 16px;
-    margin: 0;
-    padding: 0;
-    padding-left: 50px; /* 新增：整体左内边距 50px */
+    gap: 8px 10px;
+    margin: 0 auto;
+    padding: 0 18px;
+    max-width: 1200px;
     list-style: none;
 }
 
@@ -39,6 +39,11 @@ nav ul li {
 }
 
 nav a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 38px;
+    white-space: nowrap;
     color: #1a1a2e !important;
 }
 
@@ -46,10 +51,11 @@ nav a {
 @media (max-width: 600px) {
     nav ul {
         gap: 4px 8px;
+        padding: 0 10px;
     }
     nav a {
-        font-size: 0.85rem;
-        padding: 4px 10px !important;
+        font-size: 0.78rem;
+        padding: 6px 10px !important;
     }
 }
         /* 大卡片横幅样式 */
@@ -228,6 +234,7 @@ nav a {
                 <li><a href="/scene/page/community.html" role="button" class="outline">💬 加入交流群或社区</a></li>
                 <li><a href="/scene/page/milestone.html" role="button" class="outline">🏆 里程碑</a></li>
                 <li><a href="/scene/page/about.html" role="button" class="outline">👤 关于我</a></li>
+                <li><a href="/scene/page/links.html" role="button" class="outline">� 链接友站</a></li>
             </ul>
         </nav>
 

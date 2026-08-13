@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>链接，友站</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <style>
+        body {
+            background: linear-gradient(180deg, #f5f7fb 0%, #eef3ff 100%);
+            color: #1a1a2e;
+            font-family: Inter, "Segoe UI", sans-serif;
+        }
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+            padding: 10px 0;
+            z-index: 999;
+        }
+        nav ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px 12px;
+            margin: 0 auto;
+            padding: 0 18px;
+            max-width: 1200px;
+            list-style: none;
+        }
+        nav a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 38px;
+            white-space: nowrap;
+            color: #1a1a2e !important;
+        }
+        .page-header {
+            margin: 28px 0 18px;
+            padding: 28px 30px;
+            background: linear-gradient(135deg, #203b6f 0%, #325ea8 100%);
+            color: #f8fbff;
+            border-radius: 24px;
+            box-shadow: 0 18px 42px rgba(24, 39, 70, 0.14);
+        }
+        .page-header h1 {
+            margin: 0 0 12px;
+            font-size: clamp(2rem, 3vw, 2.8rem);
+        }
+        .page-header p {
+            margin: 0;
+            color: rgba(255,255,255,0.82);
+            line-height: 1.7;
+            font-size: 1.02rem;
+        }
+        .link-section {
+            margin-top: 28px;
+            background: rgba(255,255,255,0.8);
+            border: 1px solid rgba(148, 163, 184, 0.18);
+            border-radius: 22px;
+            padding: 24px 24px 18px;
+            box-shadow: 0 14px 30px rgba(15, 23, 42, 0.06);
+        }
+        .link-section h2 {
+            margin: 0 0 18px;
+            font-size: 1.5rem;
+            color: #0f172a;
+        }
+        .link-section p {
+            margin: 0 0 20px;
+            color: #475569;
+        }
+        .link-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+        }
+        .link-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 150px;
+            padding: 20px 18px;
+            border-radius: 18px;
+            background: linear-gradient(180deg, #ffffff 0%, #f7f9ff 100%);
+            border: 1px solid rgba(148, 163, 184, 0.18);
+            box-shadow: 0 10px 18px rgba(15, 23, 42, 0.04);
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .link-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 18px 30px rgba(15, 23, 42, 0.08);
+        }
+        .link-card .tag {
+            display: inline-flex;
+            align-items: center;
+            width: fit-content;
+            padding: 5px 10px;
+            border-radius: 999px;
+            background: rgba(59, 130, 246, 0.12);
+            color: #1d4ed8;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+        }
+        .link-card h3 {
+            margin: 12px 0 8px;
+            font-size: 1.2rem;
+            color: #0f172a;
+        }
+        .link-card p {
+            margin: 0;
+            color: #475569;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+        .link-card .action {
+            margin-top: 16px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 999px;
+            padding: 9px 16px;
+            background: #111827;
+            color: #ffffff;
+            font-weight: 600;
+            width: fit-content;
+        }
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            color: #6c757d;
+        }
+        @media (max-width: 680px) {
+            .page-header {
+                padding: 22px 18px;
+            }
+            .link-section {
+                padding: 18px 16px 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <nav>
+            <ul>
+                <li><a href="/scene/page/home.html" role="button" class="outline">🏠 首页</a></li>
+                <li><a href="/scene/page/game.html" role="button" class="outline">🎮 游戏下载</a></li>
+                <li><a href="/scene/page/software.html" role="button" class="outline">📦 软件下载</a></li>
+                <li><a href="/scene/page/tools.html" role="button" class="outline">🛠️ 开发工具下载</a></li>
+                <li><a href="/scene/page/community.html" role="button" class="outline">💬 社区</a></li>
+                <li><a href="/scene/page/about.html" role="button" class="outline">👤 关于我</a></li>
+            </ul>
+        </nav>
+
+        <header class="page-header">
+            <h1>链接与友站</h1>
+            <p>这里整理了我常用的社交平台、项目入口和合作站点，欢迎一起交流、关注和访问。</p>
+        </header>
+
+        <section class="link-section">
+            <h2>创意区间工作室官网</h2>
+            <p>这是我们工作室的官方网站，欢迎访问并一起探索创意与乐趣。</p>
+            <div class="link-grid">
+                <a href="https://www.vcder.com" target="_blank" class="link-card">
+                    <span class="tag">工作室</span>
+                    <div>
+                        <h3>创意区间工作室</h3>
+                        <p>目前正在施工，后续会持续更新内容与项目展示。</p>
+                    </div>
+                    <span class="action">立即前往 →</span>
+                </a>
+            </div>
+        </section>
+
+        <section class="link-section">
+            <h2>社交平台</h2>
+            <p>我的日常内容、游戏开发动态和视频更新，欢迎关注。</p>
+            <div class="link-grid">
+                <a href="https://space.bilibili.com/588753697?spm_id_from=333.1007.0.0" target="_blank" class="link-card">
+                    <span class="tag">视频</span>
+                    <div>
+                        <h3>Bilibili</h3>
+                        <p>更新我的开发过程、测试视频和创作记录。</p>
+                    </div>
+                    <span class="action">进入主页 →</span>
+                </a>
+
+                <a href="https://github.com/newDerFolder" target="_blank" class="link-card">
+                    <span class="tag">代码</span>
+                    <div>
+                        <h3>GitHub</h3>
+                        <p>在这里查看我的开发记录和下载专业开发工具</p>
+                    </div>
+                    <span class="action">查看代码 →</span>
+                </a>
+
+                <a href="https://youtube.com/@newderfolder?si=74mnBV10iKqZnKgE" target="_blank" class="link-card">
+                    <span class="tag">视频</span>
+                    <div>
+                        <h3>YouTube</h3>
+                        <p>yt上的账户，好久没有更新了</p>
+                    </div>
+                    <span class="action">观看视频 →</span>
+                </a>
+
+                <a href="https://x.com/kldermr" target="_blank" class="link-card">
+                    <span class="tag">动态</span>
+                    <div>
+                        <h3>X / Twitter</h3>
+                        <p>日常的小动态，不要多看啊</p>
+                    </div>
+                    <span class="action">查看动态 →</span>
+                </a>
+            </div>
+        </section>
+
+        <footer>
+            <small>施工中，敬请期待</small>
+        </footer>
+    </main>
+</body>
+</html>
