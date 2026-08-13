@@ -304,5 +304,39 @@
             <small>这个页面展示你个人从游戏开发到引擎工具的成长历程，后续可以继续补充更具体的项目节点。</small>
         </footer>
     </main>
+
+    <!-- 通知弹窗 -->
+    <div class="notification-modal" id="notificationModal">
+        <div class="notification-content">
+            <div class="notification-icon">🚧</div>
+            <h3>页面正在施工中</h3>
+            <p>这个页面的内容还在完善中，感谢你的耐心，敬请期待后续更新！</p>
+            <button class="notification-close" onclick="closeNotification()">知道了</button>
+        </div>
+    </div>
+
+    <script>
+        // 页面加载完成后显示通知
+        document.addEventListener('DOMContentLoaded', function() {
+            const modal = document.getElementById('notificationModal');
+            setTimeout(function() {
+                modal.classList.add('show');
+            }, 300);
+        });
+
+        // 关闭通知的函数
+        function closeNotification() {
+            const modal = document.getElementById('notificationModal');
+            modal.classList.remove('show');
+        }
+
+        // 点击背景也可以关闭通知
+        document.addEventListener('click', function(event) {
+            const modal = document.getElementById('notificationModal');
+            if (event.target === modal) {
+                modal.classList.remove('show');
+            }
+        });
+    </script>
 </body>
 </html>
