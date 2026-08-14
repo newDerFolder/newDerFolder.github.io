@@ -18,15 +18,23 @@
         .page-wrap {
             position: relative;
             width: 100vw;
-            height: 100vh;
+            min-height: 180vh;
             display: flex;
-            align-items: center;
             justify-content: flex-end;
-            padding: 30px 100px 30px 20px;
-            overflow: hidden;
+            padding: 30px 100px 120px 20px;
+        }
+        .content-shell {
+            position: relative;
+            z-index: 1;
+            width: min(84%, 740px);
+            max-width: 740px;
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+            padding-top: 20px;
         }
         .background-panel {
-            position: absolute;
+            position: fixed;
             inset: 0;
             background-image: url('/image/ts背景图.png');
             background-size: cover;
@@ -36,17 +44,18 @@
             filter: saturate(1.08) brightness(1);
             pointer-events: none;
             transform: none;
+            z-index: 0;
         }
         .background-overlay {
-            position: absolute;
+            position: fixed;
             inset: 0;
             background: rgba(255,255,255,0.00);
             pointer-events: none;
+            z-index: 0;
         }
-        .about-card {
+        .about-card,
+        .detail-card {
             position: relative;
-            width: min(84%, 740px);
-            max-width: 740px;
             background: rgba(255,255,255,0.005);
             border-radius: 28px;
             padding: 34px;
@@ -55,6 +64,16 @@
             backdrop-filter: blur(48px);
             z-index: 1;
             overflow: hidden;
+        }
+        .detail-card {
+            opacity: 0;
+            transform: translateY(80px);
+            transition: opacity 0.85s ease, transform 0.85s ease;
+            min-height: 280px;
+        }
+        .detail-card.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
         .about-card::before {
             content: '';
@@ -185,6 +204,62 @@
             line-height: 1.7;
             font-size: 0.98rem;
         }
+        .detail-header {
+            margin: 0 0 18px;
+            font-size: 0.96rem;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: #334155;
+        }
+        .skill-groups {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .skill-group {
+            width: 100%;
+            padding: 16px 18px;
+            border-radius: 18px;
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(148, 163, 184, 0.18);
+            box-shadow: inset 0 0 0 1px rgba(255,255,255,0.04);
+        }
+        .skill-group h3 {
+            margin: 0 0 12px;
+            font-size: 0.92rem;
+            line-height: 1.5;
+            color: #0f172a;
+            letter-spacing: 0.03em;
+        }
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .skill-pill {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px 12px;
+            border-radius: 999px;
+            background: rgba(59, 130, 246, 0.12);
+            border: 1px solid rgba(59, 130, 246, 0.18);
+            color: #1e293b;
+            font-size: 0.9rem;
+            box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04);
+        }
+        .skill-group:nth-child(2) .skill-pill {
+            background: rgba(139, 92, 246, 0.10);
+            border-color: rgba(139, 92, 246, 0.18);
+        }
+        .skill-group:nth-child(3) .skill-pill {
+            background: rgba(16, 185, 129, 0.10);
+            border-color: rgba(16, 185, 129, 0.18);
+        }
+        .skill-group:nth-child(4) .skill-pill {
+            background: rgba(251, 191, 36, 0.12);
+            border-color: rgba(251, 191, 36, 0.22);
+        }
         @media (max-width: 880px) {
             .profile-top {
                 grid-template-columns: 1fr;
@@ -202,9 +277,13 @@
         }
         @media (max-width: 640px) {
             .page-wrap {
-                padding: 22px 16px;
+                padding: 22px 16px 90px;
             }
-            .about-card {
+            .content-shell {
+                width: 100%;
+            }
+            .about-card,
+            .detail-card {
                 padding: 28px 22px;
                 border-radius: 24px;
             }
@@ -217,28 +296,90 @@
     </style>
 </head>
 <body>
-    <main class="page-wrap">
+    <main class="page-wrap" id="aboutPage">
         <div class="background-panel"></div>
         <div class="background-overlay"></div>
-        <section class="about-card">
-            <div class="profile-top">
-                <div class="avatar">
-                    <img src="/image/ts头像.jpg" alt="头像">
-                </div>
-                <div class="profile-meta">
-                    <div class="name-title">
-                        <h1>I'm 新建der文件夹</h1>
+
+        <div class="content-shell">
+            <section class="about-card">
+                <div class="profile-top">
+                    <div class="avatar">
+                        <img src="/image/ts头像.jpg" alt="头像">
                     </div>
-                    <p class="intro">我是一名游戏艺术家(自称)，有6年游戏开发经历，老朋友可能还记得我以前是"快乐der某人",现在用Godot引擎创作游戏。</p>
-                    <div class="tag-row">
-                        <span class="tag">游戏艺术家</span>
-                        <span class="tag">软件工程师</span>
-                        <span class="tag">苦役竞赛生</span>
+                    <div class="profile-meta">
+                        <div class="name-title">
+                            <h1>I'm 新建der文件夹</h1>
+                        </div>
+                        <p class="intro">我是一名游戏艺术家(自称)，有6年游戏开发经历，老朋友可能还记得我以前是"快乐der某人",现在用Godot引擎创作游戏。</p>
+                        <div class="tag-row">
+                            <span class="tag">游戏艺术家</span>
+                            <span class="tag">软件工程师</span>
+                            <span class="tag">苦役竞赛生</span>
+                        </div>
+                        <a href="/scene/page/home.html" class="home-link">去首页看看</a>
                     </div>
-                    <a href="/scene/page/home.html" class="home-link">去首页看看</a>
                 </div>
-            </div>
-        </section>
+            </section>
+
+            <section class="detail-card" id="techCard">
+                <p class="detail-header">我的领域</p>
+                <div class="skill-groups">
+                    <div class="skill-group">
+                        <h3>游戏开发(拿手好戏)</h3>
+                        <div class="skill-list">
+                            <span class="skill-pill">Godot</span>
+                            <span class="skill-pill">GDScript</span>
+                            <span class="skill-pill">插件开发</span>
+                            <span class="skill-pill">框架开发</span>
+                            
+                        </div>
+                    </div>
+
+                    <div class="skill-group">
+                        <h3>软件开发(第二梯队)</h3>
+                        <div class="skill-list">
+                            <span class="skill-pill">Flutter</span>
+                            <span class="skill-pill">Dart</span>
+                            <span class="skill-pill">原生Android</span>
+                            <span class="skill-pill">Java</span>
+                            <span class="skill-pill">Kotlin</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-group">
+                        <h3>人工智能与硬件(杂项)</h3>
+                        <div class="skill-list">
+                            <span class="skill-pill">Python</span>
+                            <span class="skill-pill">LangChain</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-group">
+                        <h3>网页开发(杂项)</h3>
+                        <div class="skill-list">
+                            <span class="skill-pill">Html</span>
+                            <span class="skill-pill">CSS</span>
+                            <span class="skill-pill">JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
     </main>
+
+    <script>
+        const techCard = document.getElementById('techCard');
+
+        function updateReveal() {
+            const rect = techCard.getBoundingClientRect();
+            if (rect.top < window.innerHeight * 0.7) {
+                techCard.classList.add('visible');
+            }
+        }
+
+        window.addEventListener('scroll', updateReveal, { passive: true });
+        window.addEventListener('load', updateReveal);
+        window.addEventListener('resize', updateReveal);
+    </script>
 </body>
 </html>
